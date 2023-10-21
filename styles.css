@@ -1,4 +1,9 @@
-/* Add your CSS styles here */
+/* Reset some default browser styles */
+body, h1, h2, p, ul, li {
+    margin: 0;
+    padding: 0;
+}
+
 body {
     font-family: Arial, sans-serif;
 }
@@ -7,29 +12,48 @@ header {
     background-color: #333;
     color: #fff;
     text-align: center;
-    padding: 20px;
+    padding: 10px;
+}
+
+nav {
+    background-color: #444;
+    color: #fff;
+    padding: 10px;
 }
 
 nav ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
+    list-style: none;
 }
 
-nav li {
-    display: inline;
-    margin-right: 10px;
+nav ul li {
+    margin-bottom: 10px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #fff;
 }
 
 main {
-    max-width: 800px;
-    margin: 0 auto;
     padding: 20px;
 }
 
-footer {
-    text-align: center;
-    background-color: #333;
-    color: #fff;
+section {
+    margin-bottom: 20px;
     padding: 10px;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+}
+
+/* Scrollable content */
+main {
+    overflow-y: scroll;
+    height: 400px; /* Adjust the height as needed */
+}
+
+/* Adjustments for smaller screens */
+@media (max-width: 768px) {
+    header, nav {
+        padding: 5px;
+    }
 }
