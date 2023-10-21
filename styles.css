@@ -1,59 +1,49 @@
-/* Reset some default browser styles */
-body, h1, h2, p, ul, li {
-    margin: 0;
-    padding: 0;
-}
-
 body {
-    font-family: Arial, sans-serif;
+    background-color: #303030;
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
 }
 
-header {
-    background-color: #333;
+.card-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px; /* Add spacing between the cards */
+}
+
+.card {
+    background-color: #424242;
     color: #fff;
-    text-align: center;
-    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    width: 90%; /* Adjust width to fill the available space */
+    transition: transform 0.2s;
+    position: relative;
 }
 
-nav {
-    background-color: #444;
-    color: #fff;
-    padding: 10px;
+.card:hover {
+    transform: scale(1.05);
 }
 
-nav ul {
-    list-style: none;
+.content {
+    padding: 20px; /* Add padding to the content */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
 }
 
-nav ul li {
-    margin-bottom: 10px;
+.topic {
+    font-size: 2.5em;
+    color: #fff; /* White color for the topic name */
+    margin: 0;
+    text-align: center; /* Center the topic text */
 }
 
-nav a {
-    text-decoration: none;
-    color: #fff;
-}
-
-main {
-    padding: 20px;
-}
-
-section {
-    margin-bottom: 20px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    background-color: #f9f9f9;
-}
-
-/* Scrollable content */
-main {
-    overflow-y: scroll;
-    height: 400px; /* Adjust the height as needed */
-}
-
-/* Adjustments for smaller screens */
-@media (max-width: 768px) {
-    header, nav {
-        padding: 5px;
-    }
+img {
+    max-width: 80%;
 }
