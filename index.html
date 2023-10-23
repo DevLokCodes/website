@@ -3,41 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile Slider</title>
     <link rel="stylesheet" href="styles.css">
-    <title>Material Design Cards</title>
 </head>
 <body>
-    <div class="card-container">
-        <div class="card">
-            <div class="content">
-                <h2 class="topic">Topic 1</h2>
-                <img src="logo.png" alt="Logo">
-            </div>
-        </div>
-        <div class="card">
-            <div class="content">
-                <h2 class="topic">Topic 2</h2>
-                <img src="logo.png" alt="Logo">
-            </div>
-        </div>
-        <div class="card">
-            <div class="content">
-                <h2 class="topic">Topic 3</h2>
-                <img src="logo.png" alt="Logo">
-            </div>
-        </div>
-        <div class="card">
-            <div class="content">
-                <h2 class="topic">Topic 4</h2>
-                <img src="logo.png" alt="Logo">
-            </div>
-        </div>
-        <div class="card">
-            <div class="content">
-                <h2 class="topic">Topic 5</h2>
-                <img src="logo.png" alt="Logo">
+    <div id="slider" class="slider">
+        <div class="slider-cards">
+            <div
+                v-for="(slide, index) in slides"
+                :key="index"
+                class="slider-card"
+            >
+                <img :src="slide.image" :alt="slide.title" draggable="false">
+                <h1>{{slide.title}}</h1>
+                <p>{{slide.description}}</p>
+                <button class="slider-button">BOOK</button>
             </div>
         </div>
     </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.14/vue.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <script>
+        new Vue({
+            el: '#slider',
+            data: {
+                slides: [
+                    {
+                        title: 'Ready Player One',
+                        description: 'When the creator of a popular video game system dies, a virtual contest is created to compete for his fortune.',
+                        image: 'https://image.tmdb.org/t/p/w300_and_h450_bestv2/pU1ULUq8D3iRxl1fdX2lZIzdHuI.jpg'
+                    },
+                    {
+                        title: 'Avengers: Infinity War',
+                        description: 'As the Avengers and their allies have continued to protect the world from threats too large for any...',
+                        image: 'https://image.tmdb.org/t/p/w300_and_h450_bestv2/7WsyChQLEftFiDOVTGkv3hFpyyt.jpg'
+                    },
+                    {
+                        title: 'Coco',
+                        description: 'Despite his family’s baffling generations-old ban on music, Miguel dreams of becoming an accomplished musician...',
+                        image: 'https://image.tmdb.org/t/p/w300_and_h450_bestv2/eKi8dIrr8voobbaGzDpe8w0PVbC.jpg'
+                    }
+                }
+            }
+        });
+    </script>
 </body>
 </html>
